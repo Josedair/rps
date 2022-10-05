@@ -18,12 +18,16 @@ function getComputerChoice(){
 
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
-const playerSelection = "roCk";
+let playerSelection = prompt("What's your choice?")
 
 function playRound(computer, player){
     var outcome;
     player.toString();
     var playerToLowercase = player.toLowerCase();
+
+    if(playerToLowercase != "rock" || "paper" || "scissors"){
+        outcome ="that's not how you play the game"
+    }
     
     if(computer == playerToLowercase){
         outcome = "It's a tie!!"
@@ -65,8 +69,7 @@ function playRound(computer, player){
             }
     }
 
-    else 
-        outcome = "something went wrong :/"
+    
 
    
     
@@ -75,3 +78,7 @@ function playRound(computer, player){
     return(outcome);
 }
 console.log(playRound(computerSelection,playerSelection));
+
+function game() {
+    console.log("Game")
+}
