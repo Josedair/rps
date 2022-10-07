@@ -76,6 +76,7 @@ function playRound(computer, player){
             {
                 outcome = "You lose! :/ scissors beats paper"
                 console.log("You lose! :/ scissors beats paper")
+                
             }
     }
 
@@ -133,13 +134,16 @@ function game() {
 
     if(playerPoints > computerPoints){
         console.log("You win this round! :)")
+        alert("You win this round! :)")
     }
 
     else if(playerPoints < computerPoints){
         console.log("You loose this round :/")
+        alert("You loose this round :/")
     }
     else {
         console.log("It's a tie!")
+        alert("It's a tie!")
     }
 }
 
