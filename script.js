@@ -45,8 +45,8 @@ function playRound(computer, player){
 
         else if(playerToLowercase == "scissors")
         {
-            outcome = "You loose! rock beats scissors! :/"
-            console.log("You loose! rock beats scissors! :/")
+            outcome = "You lose! rock beats scissors! :/"
+            console.log("You lose! rock beats scissors! :/")
         }
     }
 
@@ -59,8 +59,8 @@ function playRound(computer, player){
 
         else if(playerToLowercase == "rock")
         {
-            outcome = "You loose :/ paper beats rock!"
-            console.log("You loose :/ paper beats rock!")
+            outcome = "You lose :/ paper beats rock!"
+            console.log("You lose :/ paper beats rock!")
         }
 
        
@@ -74,8 +74,8 @@ function playRound(computer, player){
 
             if(playerToLowercase == "paper")
             {
-                outcome = "You loose! :/ scissors beats paper"
-                console.log("You loose! :/ scissors beats paper")
+                outcome = "You lose! :/ scissors beats paper"
+                console.log("You lose! :/ scissors beats paper")
             }
     }
 
@@ -110,6 +110,8 @@ function game() {
     // }
     for(let i = 0; i < 5; i++){
         let computerSelection = getComputerChoice();
+        //here we ask the user for input then convert it to lowercase
+        // in order for it to be universaly detected by the logic
         let playerChoice = prompt("What's your choice?");
         let playerSelection = playerChoice.toLowerCase();
         console.log("CPU: " + computerSelection);
@@ -121,7 +123,7 @@ function game() {
         if(playRound(computerSelection,playerSelection).includes("win") ){
             playerPoints++;
         }
-        else if(playRound(computerSelection,playerSelection).includes("loose")){
+        else if(playRound(computerSelection,playerSelection).includes("lose")){
             computerPoints++
         }
     }
