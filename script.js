@@ -22,6 +22,7 @@ function getComputerChoice(){
 
 // let playerSelection = prompt("What's your choice?")
 
+//this function takes two inputs cumputer & player and comapres them to determine the winner
 function playRound(computer, player){
     var outcome;
     player.toString();
@@ -96,6 +97,8 @@ function playRound(computer, player){
 }
 //  console.log(playRound(computerSelection,playerSelection));
 
+//this function takes the above function and executes it 5 times adding up the points
+// to each winner then declares a winner or a tie at the end
 function game() {
     var playerPoints = 0;
     var computerPoints = 0;
