@@ -98,8 +98,8 @@ function playRound(computer, player){
 }
 //  console.log(playRound(computerSelection,playerSelection));
 
-//this function takes the above function and executes it 5 times adding up the points
-// to each winner then declares a winner or a tie at the end
+//this function takes the above function and executes it 5 times adding up the points to each winner then declares a winner or a tie at the end
+
 function game() {
     var playerPoints = 0;
     var computerPoints = 0;
