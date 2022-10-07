@@ -39,8 +39,8 @@ function playRound(computer, player){
     else if(computer == "rock"){
         if(playerToLowercase == "paper")
         {
-            outcome = "You win! paper beats rock!"
-            console.log("You win! paper beats rock!")
+            outcome = "You Win! paper beats rock!"
+            console.log("You Win! paper beats rock!")
         }
 
         else if(playerToLowercase == "scissors")
@@ -53,8 +53,8 @@ function playRound(computer, player){
     else if(computer == "paper"){
         if(playerToLowercase == "scissors")
         {
-            outcome = "You win!! Scissors beats paper!"
-            console.log("You win!! Scissors beats paper!")
+            outcome = "You Win! Scissors beats paper!"
+            console.log("You Win! Scissors beats paper!")
         }
 
         else if(playerToLowercase == "rock")
@@ -68,8 +68,8 @@ function playRound(computer, player){
     else if(computer == "scissors"){
             if(playerToLowercase == "rock")
             {
-                outcome = "You Win!! :) rock beats scissors!"
-                console.log("You Win!! :) rock beats scissors!")
+                outcome = "You Win! :) rock beats scissors!"
+                console.log("You Win! :) rock beats scissors!")
             }
 
             if(playerToLowercase == "paper")
@@ -115,16 +115,16 @@ function game() {
         let playerChoice = prompt("What's your choice?");
         let playerSelection = playerChoice.toLowerCase();
         console.log("CPU: " + computerSelection);
-        console.log("You: " + playerSelection)
-        playRound(computerSelection,playerSelection)
+        console.log("You: " + playerSelection);
+        playRound(computerSelection,playerSelection);
         
         
         
-        if(playRound(computerSelection,playerSelection).includes("win") ){
-            playerPoints++;
-        }
-        else if(playRound(computerSelection,playerSelection).includes("lose")){
+        if(playRound(computerSelection,playerSelection).includes("lose") ){
             computerPoints++
+        }
+        else if(playRound(computerSelection,playerSelection).includes("Win")){
+            playerPoints++
         }
     }
 
