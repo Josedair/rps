@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.btnGroup{
+    display: none;
+}
+
 /* **************color Palette images ************************* */
 /* https://cdn.logojoy.com/wp-content/uploads/20220519150941/90s-pink-green-and-blue-color-scheme-600x298.jpg */
 

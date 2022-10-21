@@ -1,30 +1,38 @@
-// new loggic for buttons*******************************************************
-// const rockBtn = document.getElementById('#rock');
-// rockBtn.onclick = () => alert("Hello World");
+function hideButtons(){
+    const btnGroup = document.getElementsByClassName('btnGroup');
+    for (var i=0;i<btnGroup.length;i+=1){
+        btnGroup[i].style.display = 'block';
+      }
 
-rock.addEventListener('click', function (e) {
-    console.log(e);
-    console.log("rock");
+      const start = document.getElementsByClassName('start');
+      
+      for (var i=0;i<start.length;i+=1){
+        start[i].style.display = 'none';
+      }
+      game();
+
+}
+
+function playerChoice(){
+    rock.addEventListener('click', function (e) {
+        console.log(e);
+        console.log("rock");
+        return "rock"
+      });
     
-  });
+      paper.addEventListener('click', function (e) {
+        console.log(e);
+        console.log("paper");
+        return "paper";
+      });
+      scissors.addEventListener('click', function (e) {
+        console.log(e);
+        console.log("scissors");
+        return "scissors"
+      });
+}
+playerChoice();
 
-  paper.addEventListener('click', function (e) {
-    console.log(e);
-    console.log("paper");
-    
-  });
-  scissors.addEventListener('click', function (e) {
-    console.log(e);
-    console.log("scissors");
-    
-  });
-// new loggic for buttons*******************************************************
-
-
-
-
-//This function picks a random number from 1 - 3 and depending on the outcome
-//it returns rock paper or scissors 
 function getComputerChoice(){
     var rps;
     let choice = Math.floor(Math.random() * 3) + 1;
@@ -43,11 +51,6 @@ function getComputerChoice(){
 
 }
 
-// let computerSelection = getComputerChoice();
-
-// let playerSelection = prompt("What's your choice?")
-
-//this function takes two inputs cumputer & player and comapres them to determine the winner
 function playRound(computer, player){
     var outcome;
     
@@ -120,37 +123,19 @@ function playRound(computer, player){
     
     return(outcome);
 }
-//  console.log(playRound(computerSelection,playerSelection));
-
-//this function takes the above function and executes it 5 times adding up the points to each winner then declares a winner or a tie at the end
 
 function game() {
     var playerPoints = 0;
     var computerPoints = 0;
-      
+    var gameCounter = 0;
     
     // if(playerChoice != "rock" || "paper" || "scissors"){
     //     console.log("that's not how you play the game")
         
     // }
-    for(let i = 0; i < 5; i++){
+    while(gameCounter >= 5){
         let computerSelection = getComputerChoice();
-        //here we ask the user for input then convert it to lowercase
-        // in order for it to be universaly detected by the logic
-        let playerChoice = prompt("What's your choice?");
-        let playerSelection = playerChoice.toLowerCase();
-        console.log("CPU: " + computerSelection);
-        console.log("You: " + playerSelection);
-        playRound(computerSelection,playerSelection);
-        
-        
-        
-        if(playRound(computerSelection,playerSelection).includes("lose") ){
-            computerPoints++
-        }
-        else if(playRound(computerSelection,playerSelection).includes("Win")){
-            playerPoints++
-        }
+        let playerChoice = playerChoice();
     }
 
     console.log("Your Points: " + playerPoints);
@@ -171,4 +156,3 @@ function game() {
     }
 }
 
-// game();
