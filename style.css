@@ -1,0 +1,15 @@
+.body{
+    background-color: #1686CD;
+}
+
+#gameBoard{
+    display: flex;
+    justify-content: center;
+}
+
+/* **************color Palette images ************************* */
+/* https://cdn.logojoy.com/wp-content/uploads/20220519150941/90s-pink-green-and-blue-color-scheme-600x298.jpg */
+
+/* https://assets.dnainfo.com/generated/photo/2015/10/barrier-design-for-vernon-boulevard-1444240796.jpg/extralarge.jpg */
+
+/* ************************************************************** */
