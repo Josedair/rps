@@ -1,4 +1,5 @@
-function hideButtons(){
+function startGame(){
+    const gameCounter = 0;
     const btnGroup = document.getElementsByClassName('btnGroup');
     for (var i=0;i<btnGroup.length;i+=1){
         btnGroup[i].style.display = 'block';
@@ -9,29 +10,55 @@ function hideButtons(){
       for (var i=0;i<start.length;i+=1){
         start[i].style.display = 'none';
       }
-      game();
-
+    //   playerChoice();
+      
 }
-
-function playerChoice(){
-    rock.addEventListener('click', function (e) {
-        console.log(e);
-        console.log("rock");
-        return "rock"
-      });
+function gameCounter(count){
+    var counter = count;
+    counter += 1;
+    console.log(counter);
+    return counter
+}
+let gameCount = 0
+function clickListener(){
     
-      paper.addEventListener('click', function (e) {
-        console.log(e);
-        console.log("paper");
-        return "paper";
-      });
-      scissors.addEventListener('click', function (e) {
-        console.log(e);
-        console.log("scissors");
-        return "scissors"
-      });
+   if(gameCount != 5){
+
+        const playerChoice = event.target.id;
+        console.log(playerChoice);
+        const cpuChoice = getComputerChoice();
+        playRound(cpuChoice,playerChoice);
+        gameCount +=1;
+   }
+       
+
 }
-playerChoice();
+rock.addEventListener("click",clickListener);
+paper.addEventListener("click",clickListener);
+scissors.addEventListener("click",clickListener);
+
+// function playerChoice(){
+//     // rock.addEventListener('click', function (e) {
+//     //     getComputerChoice();
+//     //     console.log("rock");
+//     //     return "rock"
+//     //   });
+    
+//     //   paper.addEventListener('click', function (e) {
+//     //     getComputerChoice();
+//     //     console.log("paper");
+        
+//     //     return "paper";
+//     //   });
+//     //   scissors.addEventListener('click', function (e) {
+//     //     getComputerChoice();
+//     //     console.log("scissors");
+        
+//     //     return "scissors"
+//     //   });
+      
+// }
+
 
 function getComputerChoice(){
     var rps;
@@ -47,8 +74,9 @@ function getComputerChoice(){
             rps = "scissors";
             break;
     }
+    console.log("CPU:"+rps);
     return rps;
-
+    
 }
 
 function playRound(computer, player){
@@ -122,6 +150,7 @@ function playRound(computer, player){
     // }
     
     return(outcome);
+
 }
 
 function game() {
@@ -133,10 +162,10 @@ function game() {
     //     console.log("that's not how you play the game")
         
     // }
-    while(gameCounter >= 5){
-        let computerSelection = getComputerChoice();
-        let playerChoice = playerChoice();
-    }
+    // while(gameCounter >= 5){
+    //     let computerSelection = getComputerChoice();
+    //     let playerChoice = playerChoice();
+    // }
 
     console.log("Your Points: " + playerPoints);
     console.log("CPU Points: " + computerPoints);
