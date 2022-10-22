@@ -1,5 +1,5 @@
 function startGame(){
-    const gameCounter = 0;
+    
     const btnGroup = document.getElementsByClassName('btnGroup');
     for (var i=0;i<btnGroup.length;i+=1){
         btnGroup[i].style.display = 'block';
@@ -9,9 +9,19 @@ function startGame(){
       
       for (var i=0;i<start.length;i+=1){
         start[i].style.display = 'none';
+      }  
+}
+function endGame(){
+    const btnGroup = document.getElementsByClassName('btnGroup');
+    for (var i=0;i<btnGroup.length;i+=1){
+        btnGroup[i].style.display = 'none';
       }
-    //   playerChoice();
+
+      const start = document.getElementsByClassName('start');
       
+      for (var i=0;i<start.length;i+=1){
+        start[i].style.display = 'block';
+      }  
 }
 function gameCounter(count){
     var counter = count;
@@ -30,7 +40,10 @@ function clickListener(){
         playRound(cpuChoice,playerChoice);
         gameCount +=1;
    }
-       
+      if(gameCount == 5){
+        endGame();
+        gameCount = 0;
+      } 
 
 }
 rock.addEventListener("click",clickListener);
