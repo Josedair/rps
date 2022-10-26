@@ -12,17 +12,25 @@
 .btnGroup{
     display: none;
 }
+#start{
+    display: block;
+}
 #imageContainer{
     display: flex;
-    flex-direction: row;
-    
+    /* flex-direction: row; */
+    /* min-width: 250px; */
+    gap: 500px;
 }
 #playerImages{
-    display: flex;
+    flex: 1;
+    align-items: center;
+    min-width: 250px;
 }
 
 #cpuImages{
-    display: flex;
+    flex: 1;
+    min-width: 250px;
+    align-items: center;
 }
 
 .image{
@@ -36,7 +44,13 @@
 {
     display: none;
 }
+h1{
+    text-align: center;
+}
 
+button{
+    font-size: larger;
+}
 
 /* **************color Palette images ************************* */
 /* https://cdn.logojoy.com/wp-content/uploads/20220519150941/90s-pink-green-and-blue-color-scheme-600x298.jpg */

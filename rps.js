@@ -1,6 +1,14 @@
 
     function startGame(){
         resetImages();
+        const displayPlayerPoints = document.querySelector('#playerPoints');
+        const displayCpuPoints =document.querySelector('#cpuPoints');
+        const gameResult = document.querySelector('#finalResult');
+        const matchResult = document.querySelector('#result');
+        matchResult.textContent = "";
+        gameResult.textContent = "";
+        displayPlayerPoints.textContent = "";
+        displayCpuPoints.textContent = "";
         const btnGroup = document.getElementsByClassName('btnGroup');
         for (var i=0;i<btnGroup.length;i+=1){
             btnGroup[i].style.display = 'block';
@@ -12,7 +20,7 @@
             start[i].style.display = 'none';
           }  
     }
-    start.addEventListener("click", startGame);
+    
     function endGame(){
         const btnGroup = document.getElementsByClassName('btnGroup');
         for (var i=0;i<btnGroup.length;i+=1){
@@ -49,20 +57,30 @@
             const cpuChoice = getComputerChoice();
             playRound(cpuChoice,playerChoice);
             gameCount +=1;
+            const displayPlayerPoints = document.querySelector('#playerPoints');
+            const displayCpuPoints =document.querySelector('#cpuPoints');
+            displayPlayerPoints.textContent = "Player Points: " + playerPoints;
+            displayCpuPoints.textContent = "CPU Points: " + cpuPoints;
             
        }
           if(gameCount == 5){
             endGame();
             gameCount = 0;
+            const gameResult = document.querySelector('#finalResult');
             console.log("your points: " + playerPoints,
              "cpuPoints: " + cpuPoints);
             if(playerPoints == cpuPoints){
                 console.log("It's a tie!")
+                gameResult.textContent = "It's a tie!"
             }
             else if(playerPoints > cpuPoints){
                 console.log("You WIn!!")
+                gameResult.textContent = "You WIn!!"
             }
-            else{console.log("You loose :/")}
+            else{
+                console.log("You loose :/")
+                gameResult.textContent = "You loose :/"
+            }
             playerPoints = 0;
             cpuPoints = 0; 
             
@@ -125,6 +143,7 @@
     let playerPoints = 0;
     let cpuPoints = 0;
     function playRound(computer, player){
+        const matchResult = document.querySelector('#result');
         var outcome;
         if(player != "rock" || "paper" || "scissors"){
             outcome ="that's not how you play the game"
@@ -133,6 +152,7 @@
         if(computer == player){
             outcome = "It's a tie!!"
             console.log("It's a tie!!")
+            matchResult.textContent = "tie!"
             console.log("your points: " + playerPoints,
              "cpuPoints: " + cpuPoints);
         }
@@ -140,6 +160,7 @@
             if(player == "paper")
             {
                 outcome = "You Win! paper beats rock!"
+                matchResult.textContent = "You Win! paper beats rock!"
                 console.log("You Win! paper beats rock!")
                 ++playerPoints
                 console.log("your points: " + playerPoints,
@@ -149,6 +170,7 @@
             else if(player == "scissors")
             {
                 outcome = "You lose! rock beats scissors! :/"
+                matchResult.textContent = "You lose! rock beats scissors! :/"
                 console.log("You lose! rock beats scissors! :/");
                 ++cpuPoints;
                 console.log("your points: " + playerPoints,
@@ -160,6 +182,7 @@
             if(player == "scissors")
             {
                 outcome = "You Win! Scissors beats paper!"
+                matchResult.textContent = "You Win! Scissors beats paper!"
                 console.log("You Win! Scissors beats paper!");
                 ++playerPoints
                 console.log("your points: " + playerPoints,
@@ -169,6 +192,7 @@
             else if(player == "rock")
             {
                 outcome = "You lose :/ paper beats rock!";
+                matchResult.textContent = "You lose :/ paper beats rock!";
                 console.log("You lose :/ paper beats rock!");
                 ++cpuPoints;
                 console.log("your points: " + playerPoints,
@@ -181,6 +205,7 @@
                 if(player == "rock")
                 {
                     outcome = "You Win! :) rock beats scissors!"
+                    matchResult.textContent = outcome = "You Win! :) rock beats scissors!";
                     console.log("You Win! :) rock beats scissors!");
                     ++playerPoints
                     console.log("your points: " + playerPoints,
@@ -190,6 +215,7 @@
                 if(player == "paper")
                 {
                     outcome = "You lose! :/ scissors beats paper"
+                    matchResult.textContent = "You lose! :/ scissors beats paper";
                     console.log("You lose! :/ scissors beats paper");
                     ++cpuPoints;
                     console.log("your points: " + playerPoints,
@@ -289,3 +315,8 @@
               }
         }
     }
+
+    const gameBoard = document.querySelector('#gameBoard');
+    
+    
+    

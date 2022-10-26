@@ -11,27 +11,39 @@
 <body class="body">
     <div id="gameBoard">
         <h1>Rock! Paper! Scissors!</h1>
-        <button id="start"  >Start</button>
+        <button class="start" onclick="startGame()"  >Start</button>
         <div class="btnGroup" >
             <button id="rock"> Rock </button>
             <button id="paper"> Paper </button>
             <button id="scissors"> Scissors </button>
         </div>
-        <div id="imageConatiner">
+        <div id="imageContainer">
             <div id="playerImages">
+                <h1>You</h1>
                 <img class="image rockImage" src="images/rock.png" alt="rock">
 
                 <img class="image paperImage" src="images/paper.png" alt="paper">
 
                 <img class="image scissorsImage" src="images/scissors.png" alt="scissors">
+                <h1 id="playerPoints"></h1>
             </div>
             <div id="cpuImages">
+                <h1>CPU</h1>
                 <img class="image cpuRockImage" src="images/rockCPU.png" alt="cpuRock">
 
                 <img class="image cpuPaperImage" src="images/paperCPU.png" alt="cpuPaper">
 
                 <img class="image cpuScissorsImage" src="images/scissorsCPU.png" alt="cpuScissors">
+                <h1 id="cpuPoints"></h1>
             </div>
+        </div>
+        <div id="gameResult">
+            
+            <h1 id="result"></h1>
+            <h1 id="finalResult"></h1>
+            
+
+            
         </div>
     </div>
 </body>
