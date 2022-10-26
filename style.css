@@ -12,6 +12,31 @@
 .btnGroup{
     display: none;
 }
+#imageContainer{
+    display: flex;
+    flex-direction: row;
+    
+}
+#playerImages{
+    display: flex;
+}
+
+#cpuImages{
+    display: flex;
+}
+
+.image{
+    height: 240px;
+    width: 240px;
+    display: none;
+}
+
+.rockImage, .paperImage, .scissorsImage, .cpuRockImage,
+.cpuPaperImage, .cpuScissorsImage
+{
+    display: none;
+}
+
 
 /* **************color Palette images ************************* */
 /* https://cdn.logojoy.com/wp-content/uploads/20220519150941/90s-pink-green-and-blue-color-scheme-600x298.jpg */

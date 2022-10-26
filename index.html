@@ -11,17 +11,32 @@
 <body class="body">
     <div id="gameBoard">
         <h1>Rock! Paper! Scissors!</h1>
-        <button class="start" onclick="startGame()" >Start</button>
+        <button id="start"  >Start</button>
         <div class="btnGroup" >
             <button id="rock"> Rock </button>
             <button id="paper"> Paper </button>
             <button id="scissors"> Scissors </button>
         </div>
+        <div id="imageConatiner">
+            <div id="playerImages">
+                <img class="image rockImage" src="images/rock.png" alt="rock">
 
+                <img class="image paperImage" src="images/paper.png" alt="paper">
+
+                <img class="image scissorsImage" src="images/scissors.png" alt="scissors">
+            </div>
+            <div id="cpuImages">
+                <img class="image cpuRockImage" src="images/rockCPU.png" alt="cpuRock">
+
+                <img class="image cpuPaperImage" src="images/paperCPU.png" alt="cpuPaper">
+
+                <img class="image cpuScissorsImage" src="images/scissorsCPU.png" alt="cpuScissors">
+            </div>
+        </div>
     </div>
 </body>
 <head>
     <!-- <script src="script.js" defer></script> -->
-    <script src="rps.js" defer></script>
+    <script src="rps.js" ></script>
 </head>
 </html>
