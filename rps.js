@@ -43,8 +43,20 @@ function clickListener(){
       if(gameCount == 5){
         endGame();
         gameCount = 0;
-      } 
-
+        console.log("your points: " + playerPoints,
+         "cpuPoints: " + cpuPoints);
+        if(playerPoints == cpuPoints){
+            console.log("It's a tie!")
+        }
+        else if(playerPoints > cpuPoints){
+            console.log("You WIn!!")
+        }
+        else{console.log("You loose :/")}
+        playerPoints = 0;
+        cpuPoints = 0; 
+  
+      }
+     
 }
 rock.addEventListener("click",clickListener);
 paper.addEventListener("click",clickListener);
@@ -92,10 +104,10 @@ function getComputerChoice(){
     
 }
 
+let playerPoints = 0;
+let cpuPoints = 0;
 function playRound(computer, player){
     var outcome;
-    
-
     if(player != "rock" || "paper" || "scissors"){
         outcome ="that's not how you play the game"
     }
@@ -103,18 +115,26 @@ function playRound(computer, player){
     if(computer == player){
         outcome = "It's a tie!!"
         console.log("It's a tie!!")
+        console.log("your points: " + playerPoints,
+         "cpuPoints: " + cpuPoints);
     }
     else if(computer == "rock"){
         if(player == "paper")
         {
             outcome = "You Win! paper beats rock!"
             console.log("You Win! paper beats rock!")
+            ++playerPoints
+            console.log("your points: " + playerPoints,
+         "cpuPoints: " + cpuPoints);
         }
 
         else if(player == "scissors")
         {
             outcome = "You lose! rock beats scissors! :/"
-            console.log("You lose! rock beats scissors! :/")
+            console.log("You lose! rock beats scissors! :/");
+            ++cpuPoints;
+            console.log("your points: " + playerPoints,
+         "cpuPoints: " + cpuPoints);
         }
     }
 
@@ -122,13 +142,19 @@ function playRound(computer, player){
         if(player == "scissors")
         {
             outcome = "You Win! Scissors beats paper!"
-            console.log("You Win! Scissors beats paper!")
+            console.log("You Win! Scissors beats paper!");
+            ++playerPoints
+            console.log("your points: " + playerPoints,
+         "cpuPoints: " + cpuPoints);
         }
 
         else if(player == "rock")
         {
-            outcome = "You lose :/ paper beats rock!"
-            console.log("You lose :/ paper beats rock!")
+            outcome = "You lose :/ paper beats rock!";
+            console.log("You lose :/ paper beats rock!");
+            ++cpuPoints;
+            console.log("your points: " + playerPoints,
+         "cpuPoints: " + cpuPoints);
         }
 
        
@@ -137,14 +163,19 @@ function playRound(computer, player){
             if(player == "rock")
             {
                 outcome = "You Win! :) rock beats scissors!"
-                console.log("You Win! :) rock beats scissors!")
+                console.log("You Win! :) rock beats scissors!");
+                ++playerPoints
+                console.log("your points: " + playerPoints,
+         "cpuPoints: " + cpuPoints);
             }
 
             if(player == "paper")
             {
                 outcome = "You lose! :/ scissors beats paper"
-                console.log("You lose! :/ scissors beats paper")
-                
+                console.log("You lose! :/ scissors beats paper");
+                ++cpuPoints;
+                console.log("your points: " + playerPoints,
+         "cpuPoints: " + cpuPoints);
             }
     }
 
