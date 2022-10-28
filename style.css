@@ -1,3 +1,5 @@
+
+
 .body{
     background-color: #1686CD;
 }
@@ -7,8 +9,25 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    
 }
-
+#instructions{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background-color: #DC3A70;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 45px;
+}
+#instrcText{
+    font-size: 50px;
+}
 .btnGroup{
     display: none;
 }
