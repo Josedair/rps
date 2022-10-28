@@ -20,6 +20,11 @@
             start[i].style.display = 'none';
           }  
     }
+    function pageRefresh(){
+        window.location.reload(true);
+    }
+    const playAgain = document.getElementById("playAgain")
+    playAgain.addEventListener("click",pageRefresh);
     
     function endGame(){
         const btnGroup = document.getElementsByClassName('btnGroup');
@@ -27,11 +32,7 @@
             btnGroup[i].style.display = 'none';
           }
     
-          const start = document.getElementsByClassName('start');
-          
-          for (var i=0;i<start.length;i+=1){
-            start[i].style.display = 'block';
-          }  
+          playAgain.style.display = 'block';
     }
     function gameCounter(count){
         var counter = count;
@@ -61,6 +62,8 @@
             const displayCpuPoints =document.querySelector('#cpuPoints');
             displayPlayerPoints.textContent = "Player Points: " + playerPoints;
             displayCpuPoints.textContent = "CPU Points: " + cpuPoints;
+            const roundNumber = document.querySelector('#roundNumber');
+            roundNumber.textContent = gameCount;
             
        }
           if(gameCount == 5){
@@ -88,11 +91,57 @@
           }
          
     }
+
+    function firstToFive(){
+        if(playerPoints != 5 && cpuPoints != 5){
+            resetImages();
+            const playerChoice = event.target.id;
+            showImage(playerChoice);
+            console.log(playerChoice);
+            console.log(typeof(playerChoice))
+            const cpuChoice = getComputerChoice();
+            playRound(cpuChoice,playerChoice);
+            gameCount +=1;
+            const displayPlayerPoints = document.querySelector('#playerPoints');
+            const displayCpuPoints =document.querySelector('#cpuPoints');
+            displayPlayerPoints.textContent = "Player Points: " + playerPoints;
+            displayCpuPoints.textContent = "CPU Points: " + cpuPoints;
+            const roundNumber = document.querySelector('#roundNumber');
+            roundNumber.textContent = gameCount;
+            if(playerPoints == 5 || cpuPoints == 5){
+                endGame();
+                const gameResult = document.querySelector('#finalResult');
+            console.log("your points: " + playerPoints,
+             "cpuPoints: " + cpuPoints);
+            if(playerPoints == 5){
+                console.log("You WIn!!")
+                gameResult.textContent = "You WIn!!"
+            }
+            else if(cpuPoints == 5){
+                console.log("You loose :/")
+                gameResult.textContent = "You loose :/"
+                
+            }
+           
+            playerPoints = 0;
+            cpuPoints = 0; 
+            }
+        }
+
+        else {
+            endGame();
+            gameCount = 0;
+            
+            
+             
+          }
+        }
     
     
-    rock.addEventListener("click",clickListener);
-    paper.addEventListener("click",clickListener);
-    scissors.addEventListener("click",clickListener);
+    
+    rock.addEventListener("click",firstToFive);
+    paper.addEventListener("click",firstToFive);
+    scissors.addEventListener("click",firstToFive);
     
     // function playerChoice(){
     //     // rock.addEventListener('click', function (e) {

@@ -12,6 +12,7 @@
     <div id="gameBoard">
         <h1>Rock! Paper! Scissors!</h1>
         <button class="start" onclick="startGame()"  >Start</button>
+        <button id="playAgain"> Play Again?</button>
         <div class="btnGroup" >
             <button id="rock"> Rock </button>
             <button id="paper"> Paper </button>
@@ -27,6 +28,11 @@
                 <img class="image scissorsImage" src="images/scissors.png" alt="scissors">
                 <h1 id="playerPoints"></h1>
             </div>
+            <div id="roundStatus">
+                <h1>Round</h1>
+                <h1 id="roundNumber"></h1>
+                <h1 id="finalResult"></h1>
+            </div>
             <div id="cpuImages">
                 <h1>CPU</h1>
                 <img class="image cpuRockImage" src="images/rockCPU.png" alt="cpuRock">
@@ -40,7 +46,7 @@
         <div id="gameResult">
             
             <h1 id="result"></h1>
-            <h1 id="finalResult"></h1>
+            
             
 
             
@@ -49,6 +55,6 @@
 </body>
 <head>
     <!-- <script src="script.js" defer></script> -->
-    <script src="rps.js" ></script>
+    <script src="rps.js" defer></script>
 </head>
 </html>

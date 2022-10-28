@@ -15,6 +15,9 @@
 #start{
     display: block;
 }
+#playAgain{
+    display: none;
+}
 #imageContainer{
     display: flex;
     /* flex-direction: row; */
