@@ -23,9 +23,15 @@
     function pageRefresh(){
         window.location.reload(true);
     }
-    const playAgain = document.getElementById("playAgain")
+    const playAgain = document.getElementById("playAgain");
     playAgain.addEventListener("click",pageRefresh);
-    
+    const clearPopUp = document.getElementById("clearPopUp");
+    clearPopUp.addEventListener("click",closePopUp);
+    const instructions = document.getElementById("instructions");
+    function closePopUp(){
+        instructions.style.display = "none";
+    }
+
     function endGame(){
         const btnGroup = document.getElementsByClassName('btnGroup');
         for (var i=0;i<btnGroup.length;i+=1){
