@@ -31,6 +31,11 @@
     function closePopUp(){
         instructions.style.display = "none";
     }
+    function openPopUp(){
+        instructions.style.display = "flex";
+    }
+
+
 
     function endGame(){
         const btnGroup = document.getElementsByClassName('btnGroup');
