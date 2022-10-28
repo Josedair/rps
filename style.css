@@ -1,7 +1,12 @@
-
+:root{
+    --green: #B6E696;
+    --purple: #A95EA3;
+    --red: #DC3A70;
+    --blue: #1686CD;
+}
 
 .body{
-    background-color: #1686CD;
+    background-color: var(--blue);
 }
 
 #gameBoard{
@@ -18,7 +23,7 @@
     transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
-    background-color: #DC3A70;
+    background-color: var(--red);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,6 +63,7 @@
 .image{
     height: 240px;
     width: 240px;
+    border-radius: 15px;
     display: none;
 }
 
