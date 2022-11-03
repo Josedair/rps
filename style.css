@@ -17,11 +17,65 @@
     
     
 }
+#tittle{
+    background-color: var(--red);
+    border-radius: 15px;
+    padding: 15px;
+    color: var(--green);
+    outline: 3px solid var(--green);
+    font-size: 50px;
+}
+#gameStatus{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    min-width: 500PX;
+    color: var(--green);
+    background-color: var(--purple);
+    border-radius: 45px;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    
+}
+#round{
+    background-color: var(--red);
+    border-radius: 15px;
+    color: var(--green);
+    /* outline: 3px solid var(--green); */
+    padding: 15px;
+    margin-top: -2px;
+    margin-bottom: 0;
+}
+#roundNumber{
+    background-color: var(--green);
+    color: var(--red);
+    padding: 15px;
+    margin: 0;
+}
+#currentRound{
+    outline: 6px solid var(--green);
+    border-radius: 15px;
+    margin-top: 10px;
+    gap: 0;
+    background-color: var(--green);
+}
+#finalResult{
+    font-size: 75px;
+    border: 5px dotted var(--blue);
+    border-radius: 45px;
+    padding: 15px;
+    display: none;
+}
 #players,#playerPoints, #cpuPoints{
     background-color: var(--red);
     border-radius: 15px;
     color: var(--green);
     outline: 3px solid var(--green);
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    margin-left: 28px
 }
 #playerPoints, #cpuPoints{
     display: none;
@@ -29,7 +83,7 @@
 
 #instructions{
     position: fixed;
-    top: 22%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30%;
@@ -69,9 +123,9 @@
 .btnGroup{
     display: none;
 }
-#start{
-    display: block;
+.start{
     
+    visibility: hidden;
 }
 .start{
     background-color: var(--purple);
@@ -81,6 +135,8 @@
     color: var(--green);
     border: 3px solid var(--green);
     cursor: pointer;
+    display: block;
+    
 }
 .start:hover{
     background-color: #ac47a3;
@@ -123,18 +179,30 @@
     display: flex;
     /* flex-direction: row; */
     /* min-width: 250px; */
-    gap: 500px;
+    gap: 350px;
+    align-items: center;
+    justify-content: center;
+    
 }
 #playerImages{
-    flex: 1;
+    /* flex: 1; */
     align-items: center;
-    min-width: 250px;
+    justify-content: center;
+    min-width: 290px;
+    background-color: var(--purple);
+    border-radius: 45px;
+    padding: 15px;
 }
 
 #cpuImages{
-    flex: 1;
-    min-width: 250px;
+    /* flex: 1; */
+    justify-content: center;
+    justify-items: center;
+    min-width: 290px;
     align-items: center;
+    background-color: var(--purple);
+    border-radius: 45px;
+    padding: 15px;
 }
 
 
@@ -144,6 +212,10 @@
     width: 240px;
     border-radius: 15px;
     display: none;
+    margin: auto;
+}
+.questionImage{
+    display: block;
 }
 
 .rockImage, .paperImage, .scissorsImage, .cpuRockImage,

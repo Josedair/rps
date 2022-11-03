@@ -1,6 +1,6 @@
 
     function startGame(){
-        resetImages();
+        // resetImages();
         const displayPlayerPoints = document.querySelector('#playerPoints');
         const displayCpuPoints =document.querySelector('#cpuPoints');
         const gameResult = document.querySelector('#finalResult');
@@ -32,8 +32,17 @@
     const clearPopUp = document.getElementById("clearPopUp");
     clearPopUp.addEventListener("click",closePopUp);
     const instructions = document.getElementById("instructions");
+    const gameStatus = document.getElementById("gameStatus");
+    const start = document.querySelector('start');
+    
     function closePopUp(){
         instructions.style.display = "none";
+        gameStatus.style.visibility = "visible";
+        const start = document.getElementsByClassName('start');
+          
+          for (var i=0;i<start.length;i+=1){
+            start[i].style.visibility = 'visible';
+          } 
     }
     function openPopUp(){
         instructions.style.display = "flex";
@@ -85,19 +94,27 @@
             endGame();
             gameCount = 0;
             const gameResult = document.querySelector('#finalResult');
+            
             console.log("your points: " + playerPoints,
              "cpuPoints: " + cpuPoints);
+             
             if(playerPoints == cpuPoints){
                 console.log("It's a tie!")
+                
                 gameResult.textContent = "It's a tie!"
+                
             }
             else if(playerPoints > cpuPoints){
                 console.log("You WIn!!")
+                gameResult.style.display = "block";
                 gameResult.textContent = "You WIn!!"
+                
             }
             else{
                 console.log("You loose :/")
+                gameResult.style.display = "block";
                 gameResult.textContent = "You loose :/"
+                
             }
             playerPoints = 0;
             cpuPoints = 0; 
@@ -122,15 +139,20 @@
             displayPlayerPoints.textContent = "Player Points: " + playerPoints;
             displayCpuPoints.textContent = "CPU Points: " + cpuPoints;
             const roundNumber = document.querySelector('#roundNumber');
+            const result = document.querySelector('#result');
+            const currentRound = document.querySelector('#currentRound');
             roundNumber.textContent = gameCount;
             if(playerPoints == 5 || cpuPoints == 5){
                 endGame();
                 const gameResult = document.querySelector('#finalResult');
+                gameResult.style.display = "block";
             console.log("your points: " + playerPoints,
              "cpuPoints: " + cpuPoints);
+             currentRound.style.display = "none";
+             result.style.display = "none";
             if(playerPoints == 5){
                 console.log("You WIn!!")
-                gameResult.textContent = "You WIn!!"
+                gameResult.textContent = "You Win!!"
             }
             else if(cpuPoints == 5){
                 console.log("You loose :/")

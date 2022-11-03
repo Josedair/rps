@@ -15,8 +15,8 @@
                  first to 5 points wins :)</h1>
             <button id="clearPopUp">ok</button>
         </div>
-        <h1>Rock! Paper! Scissors!</h1>
-        <button class="start" onclick="startGame()"  >Start</button>
+        <h1 id="tittle">Rock! Paper! Scissors!</h1>
+        <button id="start" class="start" onclick="startGame()"  >Start</button>
         <button id="playAgain"> Play Again?</button>
         <div class="btnGroup" >
             <button id="rock"> Rock </button>
@@ -26,6 +26,7 @@
         <div id="imageContainer">
             <div id="playerImages">
                 <h1 id="players">You</h1>
+                <img class="image questionImage" src="images/questionmark.png" alt="questionMark">
                 <img class="image rockImage" src="images/rock.png" alt="rock">
 
                 <img class="image paperImage" src="images/paper.png" alt="paper">
@@ -33,13 +34,17 @@
                 <img class="image scissorsImage" src="images/scissors.png" alt="scissors">
                 <h1 id="playerPoints"></h1>
             </div>
-            <div id="roundStatus">
-                <h1 >Round</h1>
-                <h1 id="roundNumber"></h1>
+            <div id="gameStatus">
+                <div id="currentRound">
+                    <h1 id="round">Round</h1>
+                    <h1 id="roundNumber">1</h1>
+                </div>
+                <h1 id="result"></h1>
                 <h1 id="finalResult"></h1>
             </div>
             <div id="cpuImages">
                 <h1 id="players">CPU</h1>
+                <img class="image questionImage" src="images/questionmark.png" alt="questionMark">
                 <img class="image cpuRockImage" src="images/rockCPU.png" alt="cpuRock">
 
                 <img class="image cpuPaperImage" src="images/paperCPU.png" alt="cpuPaper">
@@ -50,7 +55,7 @@
         </div>
         <div id="gameResult">
             
-            <h1 id="result"></h1>
+            
             
             
 
