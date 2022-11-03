@@ -5,10 +5,12 @@
         const displayCpuPoints =document.querySelector('#cpuPoints');
         const gameResult = document.querySelector('#finalResult');
         const matchResult = document.querySelector('#result');
+        displayPlayerPoints.style.display = "block";
+        displayCpuPoints.style.display = "block";
         matchResult.textContent = "";
         gameResult.textContent = "";
-        displayPlayerPoints.textContent = "";
-        displayCpuPoints.textContent = "";
+        displayPlayerPoints.textContent = "Player Points: 0";
+        displayCpuPoints.textContent = "CPU Points: 0";
         const btnGroup = document.getElementsByClassName('btnGroup');
         for (var i=0;i<btnGroup.length;i+=1){
             btnGroup[i].style.display = 'block';
@@ -18,7 +20,9 @@
           
           for (var i=0;i<start.length;i+=1){
             start[i].style.display = 'none';
-          }  
+          } 
+        
+
     }
     function pageRefresh(){
         window.location.reload(true);

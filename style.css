@@ -17,11 +17,16 @@
     
     
 }
-#players{
+#players,#playerPoints, #cpuPoints{
     background-color: var(--red);
-    color: var(--blue);
     border-radius: 15px;
+    color: var(--green);
+    outline: 3px solid var(--green);
 }
+#playerPoints, #cpuPoints{
+    display: none;
+}
+
 #instructions{
     position: fixed;
     top: 22%;
@@ -29,7 +34,7 @@
     transform: translate(-50%, -50%);
     width: 30%;
     height: 30%;
-    background-color: var(--red);
+    background-color: var(--purple);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +43,29 @@
 }
 #instrcText{
     font-size: 50px;
+    color: var(--green);
 }
+#clearPopUp{
+    background-color: var(--red);
+    font-size: 32px;
+    border-radius: 15px;
+    padding: 2px  50px;
+    color: var(--green);
+    border: 3px solid var(--green);
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+#clearPopUp:hover{
+    background-color: #d8225f;
+    font-size: 32px;
+    border-radius: 15px;
+    padding: 2px  50px;
+    color: var(--green);
+    border: 3px solid var(--green);
+    margin-bottom: 25px;
+}
+
 .btnGroup{
     display: none;
 }
@@ -50,15 +77,33 @@
     background-color: var(--purple);
     font-size: 32px;
     border-radius: 15px;
-    padding: 5px;
+    padding: 3px;
     color: var(--green);
+    border: 3px solid var(--green);
+    cursor: pointer;
 }
+.start:hover{
+    background-color: #ac47a3;
+    font-size: 32px;
+    border-radius: 15px;
+    padding: 3px;
+    color: var(--green);
+    border: 3px solid var(--green);
+}
+
 #rock, #paper, #scissors {
     font-size: 32px;
     border-radius: 15px;
     padding: 5px;
     color: var(--green);
     background-color: var(--purple);
+    border: 3px solid var(--green);
+    cursor: pointer;
+}
+
+#rock:hover, #paper:hover, #scissors:hover{
+    background-color: #ac47a3;
+    
 }
 
 #playAgain{
@@ -68,7 +113,11 @@
     padding: 5px;
     color: var(--green);
     background-color: var(--purple);
-
+    border: 3px solid var(--green);
+    cursor: pointer;
+}
+#playAgain:hover{
+    background-color: #ac47a3;
 }
 #imageContainer{
     display: flex;
@@ -87,6 +136,8 @@
     min-width: 250px;
     align-items: center;
 }
+
+
 
 .image{
     height: 240px;
