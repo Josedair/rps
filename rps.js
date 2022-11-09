@@ -237,6 +237,7 @@ function playRound(computer, player){
 
 }
 
+// rps buttons with clicklistenrs 
 rock.addEventListener("click",firstToFive);
 paper.addEventListener("click",firstToFive);
 scissors.addEventListener("click",firstToFive);
@@ -287,9 +288,6 @@ function firstToFive(){
 
     else {
         endGame();
-        gameCount = 0;
-        
-        
-         
+        gameCount = 0; 
       }
     }
