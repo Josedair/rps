@@ -62,7 +62,7 @@
 }
 #finalResult{
     font-size: 75px;
-    border: 5px dotted var(--blue);
+    border: 5px dotted var(--red);
     border-radius: 45px;
     padding: 15px;
     display: none;
