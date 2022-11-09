@@ -1,3 +1,4 @@
+/* declared global variables for colors used */
 :root{
     --green: #B6E696;
     --purple: #A95EA3;
@@ -25,6 +26,8 @@
     outline: 3px solid var(--green);
     font-size: 50px;
 }
+
+/* used to display current round round status and final result */
 #gameStatus{
     display: flex;
     flex-direction: column;
@@ -38,6 +41,7 @@
     align-items: center;
     
 }
+/* style for the round tittle*/
 #round{
     background-color: var(--red);
     border-radius: 15px;
@@ -47,12 +51,15 @@
     margin-top: -2px;
     margin-bottom: 0;
 }
+/* style for round number being disdplayed */
 #roundNumber{
     background-color: var(--green);
     color: var(--red);
     padding: 15px;
     margin: 0;
 }
+
+/* container for round tittle and round number */
 #currentRound{
     outline: 6px solid var(--green);
     border-radius: 15px;
@@ -60,13 +67,17 @@
     gap: 0;
     background-color: var(--green);
 }
+
+/* style for the final result of the game */
 #finalResult{
     font-size: 75px;
-    border: 5px dotted var(--red);
+    background-color: var(--red);
+    outline: 5px dotted var(--blue);
     border-radius: 45px;
     padding: 15px;
     display: none;
 }
+/* style for player names (You,CPU) & for the points containers */
 #players,#playerPoints, #cpuPoints{
     background-color: var(--red);
     border-radius: 15px;
@@ -77,10 +88,13 @@
     align-self: center;
     margin-left: 28px
 }
+
+/* player points & CPU points start with a display of none */
 #playerPoints, #cpuPoints{
     display: none;
 }
 
+/* style for instruction container */
 #instructions{
     position: fixed;
     top: 45%;
@@ -95,10 +109,13 @@
     justify-content: center;
     border-radius: 45px;
 }
+/* sttyle for the instruction text */
 #instrcText{
     font-size: 50px;
     color: var(--green);
 }
+
+/* style for the OK buton */
 #clearPopUp{
     background-color: var(--red);
     font-size: 32px;
@@ -119,10 +136,14 @@
     border: 3px solid var(--green);
     margin-bottom: 25px;
 }
+/* ---------------------------- */
 
+/* RPS button group start with a display of none */
 .btnGroup{
     display: none;
 }
+
+/* style for the start button */
 .start{
     
     visibility: hidden;
@@ -146,7 +167,9 @@
     color: var(--green);
     border: 3px solid var(--green);
 }
+/* ---------------------------- */
 
+/* style for the RPS buttons */
 #rock, #paper, #scissors {
     font-size: 32px;
     border-radius: 15px;
@@ -161,7 +184,9 @@
     background-color: #ac47a3;
     
 }
+/* -------------------- */
 
+/* Style for the play again button */
 #playAgain{
     display: none;
     font-size: 32px;
@@ -175,6 +200,9 @@
 #playAgain:hover{
     background-color: #ac47a3;
 }
+/* --------------------------- */
+
+/* this div holds 3 divs inside including the player & cpu images and the round status container */
 #imageContainer{
     display: flex;
     /* flex-direction: row; */
@@ -184,6 +212,7 @@
     justify-content: center;
     
 }
+/* container that holds the player images & player points along with player tittle  */
 #playerImages{
     /* flex: 1; */
     align-items: center;
@@ -204,7 +233,7 @@
     border-radius: 45px;
     padding: 15px;
 }
-
+/* --------------------------- */
 
 
 .image{
